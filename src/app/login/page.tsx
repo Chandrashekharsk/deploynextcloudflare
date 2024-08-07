@@ -73,7 +73,7 @@ const Page = () => {
       onClick={onLogin} type="submit" disabled={disabledButton}>
         Login
       </button>
-      <p>haven't account? 
+      <p>haven{`&apos;`}t account? 
         visit <Link className="text-blue-600 underline" href="/signup">SignUp</Link> 
       </p>
     </div>

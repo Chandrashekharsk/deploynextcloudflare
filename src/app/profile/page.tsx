@@ -5,16 +5,16 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 
-// interface User {
-//   username: string;
-//   email: string;
-//   _id: string;
-//   isVerified: boolean;
-//   isAdmin: boolean;
-// }
+interface User {
+  username: string;
+  email: string;
+  _id: string;
+  isVerified: boolean;
+  isAdmin: boolean;
+}
 
-export default function page() {
-  const [user, setUser] = useState();
+export default function Page() {
+  const [user, setUser] = useState<User>();
   const router = useRouter();
 
   const logout = async () => {
@@ -48,7 +48,7 @@ export default function page() {
 
       <div className="w-auto h-[20vh]  ">
         <h2 className="text-4xl mb-2 ">PROFILE</h2>
-        {user ? <p>username: <Link className="my-6 text-sky-600 font-bold" href={`/profile/${user._id}`}>{user.username}</Link></p> : ""}
+        {user ? <p>username: <Link className="my-6 text-sky-600 font-bold" href={`/profile/${user?._id}`}>{user?.username}</Link></p> : ""}
       </div>
 
       <button

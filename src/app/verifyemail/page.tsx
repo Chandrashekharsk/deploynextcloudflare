@@ -1,10 +1,9 @@
 "use client"
 import axios from 'axios';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import {useEffect, useState} from 'react'
 
-const page = () => {
+const Page = () => {
 
   const [token, setToken] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
@@ -40,7 +39,7 @@ const page = () => {
     if(token.length>0){
       verifyUserEmail();
     }
-  },[token])
+  },[verifyUserEmail, token])
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -65,4 +64,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page;
